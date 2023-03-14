@@ -1,0 +1,5 @@
+const APP_CONSTANTS = {
+    MIN_CHARACTERS_TO_SEARCH: 3,
+};
+
+export default APP_CONSTANTS;

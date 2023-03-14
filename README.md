@@ -1,3 +1,7 @@
+# Important Note
+
+Only 10 requests to github rest api are allowed per minute as these requests are unauthenticated 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
