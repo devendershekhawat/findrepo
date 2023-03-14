@@ -1,3 +1,3 @@
-type Sort = 'forks' | 'stars' | 'updated' | 'help-wanted-issue';
+type Sort = 'forks' | 'stars' | 'updated' | 'help-wanted-issue' | null;
 
 export default Sort;

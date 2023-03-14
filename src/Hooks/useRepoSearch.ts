@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import API_CONSTANTS from '../Constants/apiConstants';
 import APP_CONSTANTS from '../Constants/appConstants';
 import Repository from '../Models/Repository';
+import Sort from '../Models/Sort';
 
-function useRepoSearch(query: string, pageSize: number):
+function useRepoSearch(query: string, pageSize: number, sortBy: Sort):
 { loading: boolean; repositories: Array<Repository>; total: number; changePage: (page: number) => void;} {
     const [loading, setLoading] = useState<boolean>(false);
     const [repositories, setRepositories] = useState<Array<Repository>>([]);
@@ -20,11 +21,13 @@ function useRepoSearch(query: string, pageSize: number):
             try {
                 setLoading(true);
                 setRepositories([]);
-                const queryString = new URLSearchParams({
+                const queryObject = {
                     q: query,
                     per_page: pageSize.toString(),
                     page: page.toString(),
-                });
+                    sort: sortBy || '',
+                };
+                const queryString = new URLSearchParams(queryObject);
                 const response = await fetch(
                     `${API_CONSTANTS.REPO_SEARCH_BASE_URL}?${queryString}`,
                 );
@@ -43,7 +46,7 @@ function useRepoSearch(query: string, pageSize: number):
             }
         }
         getResults();
-    }, [query, page, pageSize]);
+    }, [query, page, pageSize, sortBy]);
 
     return {
         loading,
