@@ -12,7 +12,7 @@ interface SearchBarProps {
 const sortOptions: Array<{ label: string; value: Sort }> = [
     {label: 'Best Match', value: null},
     {label: 'Forks', value: 'forks'},
-    {label: 'Start', value: 'stars'},
+    {label: 'Stars', value: 'stars'},
     {label: 'Update date', value: 'updated'},
 ];
 
