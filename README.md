@@ -2,6 +2,8 @@
 
 Only 10 requests to github rest api are allowed per minute as these requests are unauthenticated 
 
+App is deployed at [https://main--darling-sopapillas-08b2b5.netlify.app/](https://main--darling-sopapillas-08b2b5.netlify.app/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
